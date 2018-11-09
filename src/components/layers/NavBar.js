@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
 class NavBar extends Component {
+  state = {
+    open: false
+  }
   render() {
-    const { classes, open } = this.props;
-
+    const { classes } = this.props;
+    const { open } = this.state;
     return (
       <AppBar
         position="fixed"
@@ -26,7 +28,6 @@ class NavBar extends Component {
               [classes.hide]: open,
             })}
           >
-            <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -34,8 +35,4 @@ class NavBar extends Component {
   }
 }
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default NavBar;
+export default (NavBar);

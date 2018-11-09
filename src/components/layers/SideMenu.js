@@ -6,17 +6,17 @@ import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
+import { connect } from 'react-redux';
 
-import Categories from '../Categories';
+import Categories from '../main/Categories';
 
 class SideMenu extends Component {
+  state = {
+    open: true
+  }
   render() {
-    const { classes, theme, open } = this.props;
+    const { classes, theme } = this.props;
+    const { open } = this.state;
     return (
       <Drawer
         variant="permanent"
@@ -40,7 +40,7 @@ class SideMenu extends Component {
         <Divider />
         <h4>Categories</h4>
         <List>
-          <Categories categories={this.props.categories} onChange={this.props.onChange} />
+          <Categories />
         </List>
       </Drawer>
     );
@@ -54,4 +54,10 @@ class SideMenu extends Component {
 //   </ListItem>
 // ))}
 
-export default SideMenu;
+function mapStateToProps(state) {
+  return {
+    categories: state.categories
+  }
+}
+
+export default connect(mapStateToProps)(SideMenu);

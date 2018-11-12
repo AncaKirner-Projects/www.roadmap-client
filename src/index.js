@@ -5,7 +5,7 @@ import { store } from './store/configureStore';
 import Root from './components/Root';
 
 ReactDOM.render(
-  <Root store={store}></Root>,
+  <Root store={store} />,
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardElement from './CardElement';
 
 class CardList extends Component {
@@ -13,5 +14,9 @@ class CardList extends Component {
     );
   }
 }
+
+CardList.propTypes = {
+  products: PropTypes.array.isRequired
+};
 
 export default CardList;

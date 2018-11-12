@@ -7,7 +7,7 @@ export const showError = () => {
   }
 };
 export const getAllCategories = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     fetch('http://localhost:8000/categories')
       .then((res) => res.json())
       .then((data) => {
@@ -25,14 +25,20 @@ export const getAllCategories = () => {
         });
       })
       .catch((err) => {
-        // dispatch(SHOW_ERROR);
-        console.log('ERROR', err);
+        dispatch({ type: ActionTypes.CATEGORY_SHOW_ERROR, payload: err });
       });
   }
 };
 export const selectCategory = (category) => {
   return {
     type: ActionTypes.CATEGORY_SELECTED,
+    payload: category
+  }
+};
+
+export const unselectCategory = (category) => {
+  return {
+    type: ActionTypes.CATEGORY_UNSELECTED,
     payload: category
   }
 };

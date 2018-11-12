@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
@@ -33,7 +34,7 @@ class SideMenu extends Component {
         open={open}
       >
         <div className={classes.toolbar}>
-          <IconButton onClick={this.props.onClick}>
+          <IconButton>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
@@ -46,6 +47,11 @@ class SideMenu extends Component {
     );
   }
 }
+
+SideMenu.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
+};
 
 // {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
 //   <ListItem button key={text}>

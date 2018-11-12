@@ -5,8 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { styles } from './layers/styles/appStyles';
 import NavBar from './layers/NavBar';
 import SideMenu from './layers/SideMenu';
-// import ProductController from '../controllers/ProductController';
-// import CategoryController from '../controllers/CategoryController';
 // import MainPage from './layers/MainPage';
 
 import { bindActionCreators } from 'redux';
@@ -14,9 +12,6 @@ import { connect } from 'react-redux';
 import { getAllCategories } from '../store/actions/categoryActions';
 
 class MiniDrawer extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   // onHandleCheckCategory = (e) => {
   //   let { products, categories, productsForCategory } = this.state;
@@ -42,25 +37,8 @@ class MiniDrawer extends React.Component {
   //   this.setState({ ...this.state, productsForCategory: productsForCategory, categories: categories });
   // }
 
-  // handleDrawerOpen = () => {
-  //   this.setState({ open: true });
-  // };
-
-  // handleDrawerClose = () => {
-  //   //keep always opened
-  //   this.setState({ open: true });
-  // };
-
   componentDidMount() {
     this.props.getAllCategories();
-    //   console.log("this state", this.props);
-    //   this.setState(this.props);
-    // ProductController.getAllProducts().then((data) => {
-    //   this.setState({ ...this.state, products: data, productsForCategory: data });
-    // });
-    // CategoryController.getAllCategories().then((data) => {
-    //   this.setState({ ...this.state, categories: data });
-    // });
   }
 
   render() {
@@ -68,8 +46,8 @@ class MiniDrawer extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <NavBar classes={classes} open={this.props.open} />
-        <SideMenu classes={classes} theme={theme} open={this.props.open} />
+        <NavBar classes={classes} />
+        <SideMenu classes={classes} theme={theme} />
         {/* <MainPage classes={classes} /> */}
       </div>
     );
@@ -79,10 +57,11 @@ class MiniDrawer extends React.Component {
 MiniDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
+  getAllCategories: PropTypes.func.isRequired
 };
 
-const matchDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getAllCategories: getAllCategories }, dispatch);
-}
+const mapDispatchToProps = (dispatch) => ({
+  ...bindActionCreators({ getAllCategories: getAllCategories }, dispatch)
+});
 
-export default withStyles(styles, { withTheme: true })(connect(null, matchDispatchToProps)(MiniDrawer));
+export default withStyles(styles, { withTheme: true })(connect(null, mapDispatchToProps)(MiniDrawer));

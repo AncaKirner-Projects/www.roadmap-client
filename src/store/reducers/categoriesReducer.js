@@ -1,31 +1,39 @@
-import findIndex from 'lodash/findIndex';
 import ActionTypes from '../actions/actionTypes';
 import { createReducer } from '../helpers/reducerHelper';
 
+const initialState = {
+  selected: [],
+  list: []
+}
+
 export const categoriesReducer = createReducer(
-  { list: [], selected: [] },
+  [],
   {
     [ActionTypes.FETCH_CATEGORIES]: (state, action) => {
       return action.payload
     },
-    [ActionTypes.CATEGORY_SELECTED]: (state, action) => {
-      console.log('reducer ', state, action, state.selectedCategories, action.payload);
+    [ActionTypes.CATEGORY_SELECTED]: (state = initialState, action) => {
+      const beforeSelected = state.selected ? [...state.selected, action.payload.id] : [action.payload.id];
+
       return {
         ...state,
-        selected: [...state.selected, action.payload]
+        selected: beforeSelected
       }
     },
     [ActionTypes.CATEGORY_UNSELECTED]: (state, action) => {
-      const index = findIndex(state.selectedCategories, { id: action.payload.id });
+      const selectedList = [...state.list];
+      const index = state.list.findIndex(elem => action.payload.id === elem.id);
+      selectedList[index].checked = false;
 
-      if (index >= 0) {
-        return [
-          ...state,
-          ...state.selectedCategories.slice(0, index),
-          ...state.selectedCategories.slice(index + 1)
-        ]
+      const newSelected = state.selected.filter(elem => action.payload.id !== elem);
+
+      return {
+        list: selectedList,
+        selected: newSelected
       }
-      return state;
+    },
+    [ActionTypes.CATEGORY_SHOW_ERROR]: (state, action) => {
+      return action.payload;
     }
   })
 

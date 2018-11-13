@@ -1,8 +1,14 @@
-const products = (state = [], action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+import ActionTypes from '../actions/actionTypes';
+import createReducer from '../helpers/reducerHelper';
 
-export default products;
+const productsReducer = createReducer(
+  [],
+  {
+    [ActionTypes.FETCH_PRODUCTS]: (state, action) => ({
+      all: action.payload.all,
+      uniq: action.payload.uniq
+    })
+  },
+);
+
+export default productsReducer;

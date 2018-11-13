@@ -8,7 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 class NavBar extends Component {
   state = {
     open: false
-  }
+  };
+
   render() {
     const { classes } = this.props;
     const { open } = this.state;
@@ -16,7 +17,7 @@ class NavBar extends Component {
       <AppBar
         position="fixed"
         className={classNames(classes.appBar, {
-          [classes.appBarShift]: open,
+          [classes.appBarShift]: open
         })}
       >
         <Toolbar disableGutters={!open}>
@@ -24,7 +25,7 @@ class NavBar extends Component {
             color="inherit"
             aria-label="Open drawer"
             className={classNames(classes.menuButton, {
-              [classes.hide]: open,
+              [classes.hide]: open
             })}
           />
         </Toolbar>

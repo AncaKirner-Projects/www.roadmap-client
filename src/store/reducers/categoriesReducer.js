@@ -1,71 +1,40 @@
 import ActionTypes from '../actions/actionTypes';
-import { createReducer } from '../helpers/reducerHelper';
+import createReducer from '../helpers/reducerHelper';
 
 const initialState = {
   selected: [],
   list: []
-}
+};
 
-export const categoriesReducer = createReducer(
+const selectCategoryList = (state, action, check) => {
+  const selectedList = [...state.list];
+  const index = state.list.findIndex(elem => action.payload.category.id === elem.id);
+  selectedList[index].checked = check;
+
+  return selectedList;
+};
+
+const categoriesReducer = createReducer(
   [],
   {
-    [ActionTypes.FETCH_CATEGORIES]: (state, action) => {
-      return action.payload
-    },
+    [ActionTypes.FETCH_CATEGORIES]: (state, action) => action.payload,
     [ActionTypes.CATEGORY_SELECTED]: (state = initialState, action) => {
-      const beforeSelected = state.selected ? [...state.selected, action.payload.id] : [action.payload.id];
+      let newSelected;
+      if (action.payload.checked) {
+        newSelected = state.selected ? [...state.selected, action.payload.category.id]
+          : [action.payload.category.id];
+      } else {
+        newSelected = state.selected.filter(elem => action.payload.category.id !== elem);
+      }
 
       return {
-        ...state,
-        selected: beforeSelected
-      }
+        list: selectCategoryList(state, action, action.payload.checked),
+        selected: newSelected,
+        selectedProducts: action.payload.products
+      };
     },
-    [ActionTypes.CATEGORY_UNSELECTED]: (state, action) => {
-      const selectedList = [...state.list];
-      const index = state.list.findIndex(elem => action.payload.id === elem.id);
-      selectedList[index].checked = false;
-
-      const newSelected = state.selected.filter(elem => action.payload.id !== elem);
-
-      return {
-        list: selectedList,
-        selected: newSelected
-      }
-    },
-    [ActionTypes.CATEGORY_SHOW_ERROR]: (state, action) => {
-      return action.payload;
-    }
-  })
-
-
-
-// (state = { list: [], selectedCategories: [] }, action) => {
-// switch (action.type) {
-//   case FETCH_CATEGORIES: {
-//     console.log('FETCH', state, action);
-//     return {
-//       ...state,
-//       list: action.payload
-//     }
-//   }
-//   case "CATEGORY_SELECTED": {
-//     return { ...state, selectedCategories: [...state.selectedCategories, action.payload] }
-//   }
-//   case "CATEGORY_UNSELECTED": {
-//     const index = findIndex(state.selectedCategories, { id: action.payload.id });
-
-//     if (index >= 0) {
-//       return [
-//         ...state,
-//         ...state.selectedCategories.slice(0, index),
-//         ...state.selectedCategories.slice(index + 1)
-//       ]
-//     }
-//     return state;
-//   }
-//   default:
-//     return state;
-// }
-// }
+    [ActionTypes.CATEGORY_SHOW_ERROR]: (state, action) => action.payload
+  },
+);
 
 export default categoriesReducer;

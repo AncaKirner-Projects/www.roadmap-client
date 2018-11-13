@@ -1,15 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CardList from '../main/CardList';
 
-class MainPage extends React.Component {
-  render() {
-    return (
-      <main className={this.props.classes.content}>
-        <div className={this.props.classes.toolbar} />
-        <CardList products={this.props.products} />
-      </main>
-    );
-  }
-}
+const MainPage = props => (
+  <main className={props.classes.content}>
+    <div className={props.classes.toolbar} />
+    <CardList />
+  </main>
+);
+
+
+MainPage.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 
 export default MainPage;

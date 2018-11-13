@@ -14,7 +14,8 @@ import Categories from '../main/Categories';
 class SideMenu extends Component {
   state = {
     open: true
-  }
+  };
+
   render() {
     const { classes, theme } = this.props;
     const { open } = this.state;
@@ -23,13 +24,13 @@ class SideMenu extends Component {
         variant="permanent"
         className={classNames(classes.drawer, {
           [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
+          [classes.drawerClose]: !open
         })}
         classes={{
           paper: classNames({
             [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open,
-          }),
+            [classes.drawerClose]: !open
+          })
         }}
         open={open}
       >
@@ -63,7 +64,7 @@ SideMenu.propTypes = {
 function mapStateToProps(state) {
   return {
     categories: state.categories
-  }
+  };
 }
 
 export default connect(mapStateToProps)(SideMenu);

@@ -4,10 +4,9 @@ import rootReducer from './reducers/rootReducer';
 
 const store = createStore(
   rootReducer,
-  {},
   compose(
     applyMiddleware(thunk),
-    window.devToolsExtension && window.devToolsExtension()
+    // window.devToolsExtension && window.devToolsExtension()
   )
 );
 

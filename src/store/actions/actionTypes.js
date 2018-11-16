@@ -7,11 +7,9 @@ const ActionTypes = {
   FETCH_PRODUCTS: 'products:getAllProducts'
 };
 
-export const showError = (err) => {
-  return {
-    type: ActionTypes.SHOW_ERROR,
-    payload: 'ERROR!! '.concat(err)
-  };
-};
+export const showError = (err, errType) => ({
+  type: errType,
+  payload: 'ERROR!! '.concat(err)
+});
 
 export default ActionTypes;

@@ -1,5 +1,15 @@
 {
   "name": "client-shop",
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "verbose": true
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +17,7 @@
     "@material-ui/icons": "^3.0.1",
     "classnames": "^2.2.6",
     "eslint-config-airbnb": "^17.1.0",
+    "fetch-mock": "^7.2.5",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
@@ -21,7 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watchAll",
+    "test:watch": "npm test --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,12 +49,23 @@
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
     "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.9.0",
     "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-react-redux": "^2.3.0"
+    "eslint-plugin-react-redux": "^2.3.0",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^6.3.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.6.3",
+    "redux-mock-store": "^1.5.3"
   }
 }

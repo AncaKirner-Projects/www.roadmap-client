@@ -20,30 +20,28 @@ export const getAllCategories = () => {
         });
       })
       .catch((err) => {
-        dispatch(showError(err));
+        dispatch(showError(err, ActionTypes.CATEGORY_SHOW_ERROR));
       });
   };
 };
 
-export const selectCategory = (category, checked) => {
-  return (dispatch, getState) => {
-    const { categories, products } = getState();
-    let selected;
+export const selectCategory = (category, checked) => (dispatch, getState) => {
+  const { categories, products } = getState();
+  let selected;
 
-    if (checked) {
-      selected = categories.selected ? [...categories.selected, category.id] : [category.id];
-    } else {
-      selected = categories.selected.filter(elem => category.id !== elem);
+  if (checked) {
+    selected = categories.selected ? [...categories.selected, category.id] : [category.id];
+  } else {
+    selected = categories.selected.filter(elem => category.id !== elem);
+  }
+  const uniqProducts = getUniqueProductsByCategories(products.all, selected);
+
+  dispatch({
+    type: ActionTypes.CATEGORY_SELECTED,
+    payload: {
+      checked,
+      category,
+      products: uniqProducts
     }
-    const uniqProducts = getUniqueProductsByCategories(products.all, selected);
-
-    dispatch({
-      type: ActionTypes.CATEGORY_SELECTED,
-      payload: {
-        checked,
-        category,
-        products: uniqProducts
-      }
-    });
-  };
+  });
 };

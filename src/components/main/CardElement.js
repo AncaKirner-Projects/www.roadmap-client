@@ -22,15 +22,15 @@ const CardActionsStyle = styled(CardActions)`
 `;
 
 const CardElement = (props) => {
-  const { prod_name, prod_description, price } = props.product;
+  const { prod_name: name, prod_description: description, price } = props.product;
   return (
     <CardStyle>
       <CardContent>
         <TextStyle align="center" variant="h5" component="h3">
-          {prod_name}
+          {name}
         </TextStyle>
         <TextStyle align="center" component="p">
-          {prod_description}
+          {description}
         </TextStyle>
         <Typography align="center" variant="h5" component="h1" color="primary">
           {price}

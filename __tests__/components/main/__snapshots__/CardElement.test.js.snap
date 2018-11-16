@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardElement /> renders an element card 1`] = `
+<Styled(WithStyles(Card))>
+  <WithStyles(CardContent)>
+    <Styled(WithStyles(Typography))
+      align="center"
+      component="h3"
+      variant="h5"
+    >
+      Test Product
+    </Styled(WithStyles(Typography))>
+    <Styled(WithStyles(Typography))
+      align="center"
+      component="p"
+    >
+      Product description
+    </Styled(WithStyles(Typography))>
+    <WithStyles(Typography)
+      align="center"
+      color="primary"
+      component="h1"
+      variant="h5"
+    >
+      23.6
+      RON
+    </WithStyles(Typography)>
+    <Styled(WithStyles(CardActions))>
+      <WithStyles(Button)
+        color="primary"
+        size="small"
+        variant="contained"
+      >
+        Add to chart
+      </WithStyles(Button)>
+    </Styled(WithStyles(CardActions))>
+  </WithStyles(CardContent)>
+</Styled(WithStyles(Card))>
+`;

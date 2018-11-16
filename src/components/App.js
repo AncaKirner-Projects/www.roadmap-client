@@ -12,7 +12,7 @@ import MainPage from './layers/MainPage';
 import { getAllCategories } from '../store/actions/categoryActions';
 import getAllProducts from '../store/actions/productActions';
 
-class MiniDrawer extends React.Component {
+export class MiniDrawer extends React.Component {
   componentDidMount() {
     this.props.getAllProducts();
     this.props.getAllCategories();

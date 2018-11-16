@@ -1,17 +1,10 @@
 import ActionTypes from '../actions/actionTypes';
 import createReducer from '../helpers/reducerHelper';
+import selectCategoryList from '../helpers/categoriesHelper';
 
 const initialState = {
   selected: [],
   list: []
-};
-
-const selectCategoryList = (state, action, check) => {
-  const selectedList = [...state.list];
-  const index = state.list.findIndex(elem => action.payload.category.id === elem.id);
-  selectedList[index].checked = check;
-
-  return selectedList;
 };
 
 const categoriesReducer = createReducer(
@@ -33,7 +26,9 @@ const categoriesReducer = createReducer(
         selectedProducts: action.payload.products
       };
     },
-    [ActionTypes.CATEGORY_SHOW_ERROR]: (state, action) => action.payload
+    [ActionTypes.CATEGORY_SHOW_ERROR]: (state, action) => {
+      throw new Error(`ERROR: ${action.payload}`);
+    }
   },
 );
 

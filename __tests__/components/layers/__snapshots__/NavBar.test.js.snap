@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> renders 1 <AppBar/> component 1`] = `
+<WithStyles(AppBar)
+  className=""
+  position="fixed"
+>
+  <WithStyles(Toolbar)
+    disableGutters={true}
+  >
+    <WithStyles(IconButton)
+      aria-label="Open drawer"
+      className=""
+      color="inherit"
+    />
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;

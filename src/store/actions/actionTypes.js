@@ -8,7 +8,8 @@ const ActionTypes = {
   ADD_PRODUCT: 'products:addProduct',
   PRODUCTS_SHOW_ERROR: 'products:showError',
   DELETE_STATUS_MESSAGE: 'products:deleteStatusMessage',
-  ADD_TO_CHART: 'products:addToChart'
+  ADD_TO_CART: 'cart:addToCart',
+  DELETE_CART_STATUS_MESSAGE: 'products:deleteCartStatusMessage'
 };
 
 export const showError = (err, errType) => ({

@@ -18,9 +18,6 @@ const productsReducer = createReducer(
         status
       };
     },
-    [ActionTypes.ADD_TO_CHART]: (state, action) => {
-
-    },
     [ActionTypes.DELETE_STATUS_MESSAGE]: (state, action) => {
       const messages = state.status.filter(elem => action.payload !== elem.type);
 

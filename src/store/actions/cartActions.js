@@ -1,10 +1,19 @@
 import ActionTypes from './actionTypes';
 
-const addToCart = product => (dispatch) => {
+export const addToCart = product => (dispatch) => {
   dispatch({
-    type: ActionTypes.ADD_TO_CHART,
-    payload: product
+    type: ActionTypes.ADD_TO_CART,
+    payload: product,
+    status: {
+      type: ActionTypes.ADD_TO_CART,
+      message: 'The product was added into cart'
+    }
   });
 };
 
-export default addToCart;
+export const deleteCartStatusMessage = type => (dispatch) => {
+  dispatch({
+    type: ActionTypes.DELETE_CART_STATUS_MESSAGE,
+    payload: type
+  });
+};

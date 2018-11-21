@@ -15,11 +15,12 @@ const CardList = (props) => {
 };
 
 CardList.propTypes = {
-  products: PropTypes.array.isRequired
+  products: PropTypes.array
 };
 
 const mapStateToProps = (state) => {
-  const products = state.categories.selectedProducts ? state.categories.selectedProducts
+  const products = (state.categories && state.categories.selectedProducts)
+    ? state.categories.selectedProducts
     : state.products.uniq;
 
   return {

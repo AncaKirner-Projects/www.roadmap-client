@@ -7,9 +7,17 @@ import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import Categories from '../main/Categories';
+
+const TypoStlyled = styled(Typography)`
+  padding: 10px 0px 0px 10px;
+  text-decoration: none;
+`;
 
 class SideMenu extends Component {
   state = {
@@ -40,7 +48,7 @@ class SideMenu extends Component {
           </IconButton>
         </div>
         <Divider />
-        <h4>Categories</h4>
+        <TypoStlyled variant="h6" to="/" component={Link}>Categories</TypoStlyled>
         <List>
           <Categories />
         </List>

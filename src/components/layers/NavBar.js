@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import MaterialIcon from 'material-icons-react';
+import { Link } from 'react-router-dom';
+import CreateDialog from '../main/AddProduct';
+
 
 class NavBar extends Component {
   state = {
@@ -28,6 +32,13 @@ class NavBar extends Component {
               [classes.hide]: open
             })}
           />
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <CreateDialog />
+            <IconButton color="inherit" to="/cart" component={Link}>
+              <MaterialIcon icon="shopping_cart" color="white" size={25} />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     );

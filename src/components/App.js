@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import styles from './layers/styles/appStyles';
@@ -21,12 +23,14 @@ export class MiniDrawer extends React.Component {
   render() {
     const { classes, theme } = this.props;
     return (
-      <div className={classes.root}>
-        <CssBaseline />
-        <NavBar classes={classes} />
-        <SideMenu classes={classes} theme={theme} />
-        <MainPage classes={classes} />
-      </div>
+      <BrowserRouter>
+        <div className={classes.root}>
+          <CssBaseline />
+          <NavBar classes={classes} />
+          <SideMenu classes={classes} theme={theme} />
+          <MainPage classes={classes} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
@@ -45,7 +49,7 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 });
 
-export default withStyles(
-  styles,
-  { withTheme: true }
-)(connect(null, mapDispatchToProps)(MiniDrawer));
+export default compose(
+  withStyles(styles, { withTheme: true }),
+  connect(null, mapDispatchToProps)
+)(MiniDrawer);

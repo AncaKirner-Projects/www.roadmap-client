@@ -8,7 +8,7 @@ describe('actionTypes', () => {
     };
     const expectResult = {
       type: err.errType,
-      payload: 'ERROR!! '.concat(err.errMassege)
+      payload: err.errMassege
     };
     expect(showError(err.errType, err.errMassege)).toEqual(expectResult);
   });

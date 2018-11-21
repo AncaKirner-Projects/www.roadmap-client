@@ -4,6 +4,9 @@ const styles = theme => ({
   root: {
     display: 'flex'
   },
+  grow: {
+    flexGrow: 1
+  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -59,6 +62,12 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex'
+    }
   }
 });
 

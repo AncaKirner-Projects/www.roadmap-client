@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardList /> renders a card list 1`] = `
+<Fragment>
+  <CardElement
+    key="1"
+    product={
+      Object {
+        "id": 1,
+        "price": 23.6,
+        "prod_description": "Product description",
+        "prod_name": "Test Product",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`<CardList /> renders a card list when categories selected 1`] = `
+<Fragment>
+  <CardElement
+    key="1"
+    product={
+      Object {
+        "id": 1,
+        "price": 23.6,
+        "prod_description": "Product description",
+        "prod_name": "Test Product",
+      }
+    }
+  />
+</Fragment>
+`;

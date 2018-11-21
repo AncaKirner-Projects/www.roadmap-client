@@ -3,6 +3,14 @@ import thunk from 'redux-thunk';
 import * as actions from '../../../src/store/actions/categoryActions';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
+const mockResponse = (status, statusText, response) => new Response(response, {
+  status,
+  statusText,
+  headers: {
+    'Content-type': 'application/json'
+  }
+});
+
 let store;
 const mockStoreObj1 = {
   categories: {
@@ -23,6 +31,58 @@ const mockStoreObj2 = {
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
+
+describe('getAllCategories', () => {
+  const payload = {
+    list: [
+      {
+        id: 1,
+        name: 'Categ1',
+        checked: false
+      }
+    ]
+  };
+
+  it('FETCH_PRODUCTS success', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve(
+      mockResponse(200, null, `[{
+        "id": 1,
+        "category_name": "Categ1"
+      }]`)
+    ));
+
+    const expectedActions = {
+      type: ActionTypes.FETCH_CATEGORIES,
+      payload
+    };
+
+    const dispatch = (action) => {
+      expect(action).toEqual(expectedActions);
+    };
+
+    actions.getAllCategories()(dispatch);
+  });
+
+  it('FETCH_CATEGORIES error', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject(
+      mockResponse(400, 'Test Error!', `{
+        "status":400,
+        "statusText": "Test Error!"}
+      `)
+    ));
+
+    const expectedActions = {
+      type: ActionTypes.CATEGORY_SHOW_ERROR,
+      payload: 'Test Error!'
+    };
+
+    const dispatch = (action) => {
+      expect(action).toEqual(expectedActions);
+    };
+
+    actions.getAllCategories()(dispatch);
+  });
+});
 
 describe('selectCategory', () => {
   afterEach(() => {

@@ -4,12 +4,16 @@ const ActionTypes = {
   CATEGORY_SELECTED: 'categories:selectCategory',
   CATEGORY_UNSELECTED: 'categories:unselectCategory',
   CATEGORY_SHOW_ERROR: 'categories:showError',
-  FETCH_PRODUCTS: 'products:getAllProducts'
+  FETCH_PRODUCTS: 'products:getAllProducts',
+  ADD_PRODUCT: 'products:addProduct',
+  PRODUCTS_SHOW_ERROR: 'products:showError',
+  DELETE_STATUS_MESSAGE: 'products:deleteStatusMessage',
+  ADD_TO_CHART: 'products:addToChart'
 };
 
 export const showError = (err, errType) => ({
   type: errType,
-  payload: 'ERROR!! '.concat(err)
+  payload: err
 });
 
 export default ActionTypes;

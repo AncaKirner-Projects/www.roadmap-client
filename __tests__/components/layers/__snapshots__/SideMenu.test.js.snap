@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideMenu /> renders the component 1`] = `
+<WithStyles(Drawer)
+  className=""
+  classes={
+    Object {
+      "paper": "",
+    }
+  }
+  open={true}
+  variant="permanent"
+>
+  <div
+    className={Object {}}
+  >
+    <WithStyles(IconButton)>
+      <pure(ChevronLeftIcon) />
+    </WithStyles(IconButton)>
+  </div>
+  <WithStyles(Divider) />
+  <h4>
+    Categories
+  </h4>
+  <WithStyles(List)>
+    <Connect(Categories) />
+  </WithStyles(List)>
+</WithStyles(Drawer)>
+`;

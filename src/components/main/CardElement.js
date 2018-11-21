@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CardStyle = styled(Card)`
   width: 310px;
@@ -22,11 +23,15 @@ const CardActionsStyle = styled(CardActions)`
 `;
 
 const CardElement = (props) => {
-  const { prod_name: name, prod_description: description, price } = props.product;
+  const {
+    id, prod_name: name, prod_description: description, price
+  } = props.product;
+  const renderLink = itemProps => <Link to={`/products/${id}`} {...itemProps} />;
+
   return (
     <CardStyle>
       <CardContent>
-        <TextStyle align="center" variant="h5" component="h3">
+        <TextStyle align="center" variant="h5" to={`/products/${id}`} component={renderLink}>
           {name}
         </TextStyle>
         <TextStyle align="center" component="p">

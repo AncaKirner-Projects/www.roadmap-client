@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Categories /> renders a card list 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Naked": [Function],
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "rules": Array [
+          "
+  margin-left: 20px;
+",
+        ],
+      },
+      "displayName": "Styled(WithStyles(FormGroup))",
+      "options": Object {
+        "name": "MuiFormGroup",
+      },
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={true}
+        color="primary"
+        onChange={[Function]}
+        value="Categ1"
+      />
+    }
+    key="1"
+    label="Categ1"
+  />
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={false}
+        color="primary"
+        onChange={[Function]}
+        value="Categ2"
+      />
+    }
+    key="2"
+    label="Categ2"
+  />
+</StyledComponent>
+`;

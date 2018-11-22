@@ -56,7 +56,6 @@ class AddProduct extends Component {
   }
 
   handleCreateProduct = () => {
-    console.log('addd');
     const product = {
       category_id: parseInt(this.state.formData.category, 0),
       prod_name: this.state.formData.name,
@@ -199,4 +198,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 });
 
-export default (AddProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(AddProduct);

@@ -79,7 +79,6 @@ class CardElement extends Component {
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart ? state.cart.products : [],
   status: state.cart ? state.cart.status : []
 });
 

@@ -2,7 +2,7 @@
 
 exports[`<CardList /> renders a card list 1`] = `
 <Fragment>
-  <CardElement
+  <Connect(CardElement)
     key="1"
     product={
       Object {
@@ -18,7 +18,7 @@ exports[`<CardList /> renders a card list 1`] = `
 
 exports[`<CardList /> renders a card list when categories selected 1`] = `
 <Fragment>
-  <CardElement
+  <Connect(CardElement)
     key="1"
     product={
       Object {

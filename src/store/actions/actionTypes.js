@@ -9,7 +9,9 @@ const ActionTypes = {
   PRODUCTS_SHOW_ERROR: 'products:showError',
   DELETE_STATUS_MESSAGE: 'products:deleteStatusMessage',
   ADD_TO_CART: 'cart:addToCart',
-  DELETE_CART_STATUS_MESSAGE: 'products:deleteCartStatusMessage'
+  DELETE_CART_STATUS_MESSAGE: 'cart:deleteCartStatusMessage',
+  DELETE_FROM_CART: 'cart:DeleteFromCart',
+  CHANGE_PRODUCT_QUANTITY: 'cart:changeQuantity'
 };
 
 export const showError = (err, errType) => ({

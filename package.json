@@ -1,6 +1,9 @@
 {
   "name": "client-shop",
   "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
     "transformIgnorePatterns": [
       "node_modules"
     ],
@@ -23,6 +26,7 @@
     "material-icons-react": "^1.0.4",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
+    "react-dom": "^16.6.3",
     "react-material-ui-form-validator": "^2.0.2",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
@@ -65,9 +69,11 @@
     "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-redux": "^2.3.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "jest-fetch-mock": "^1.7.4",
     "jest-styled-components": "^6.3.1",
+    "jest-transform-css": "^2.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.6.3",
     "redux-mock-store": "^1.5.3",

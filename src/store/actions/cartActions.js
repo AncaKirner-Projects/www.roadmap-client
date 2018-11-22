@@ -11,6 +11,23 @@ export const addToCart = product => (dispatch) => {
   });
 };
 
+export const changeQuantity = (product, newQuantity) => (dispatch) => {
+  dispatch({
+    type: ActionTypes.CHANGE_PRODUCT_QUANTITY,
+    payload: {
+      product,
+      newQuantity
+    }
+  });
+};
+
+export const deleteFromCart = product => (dispatch) => {
+  dispatch({
+    type: ActionTypes.DELETE_FROM_CART,
+    payload: product
+  });
+};
+
 export const deleteCartStatusMessage = type => (dispatch) => {
   dispatch({
     type: ActionTypes.DELETE_CART_STATUS_MESSAGE,

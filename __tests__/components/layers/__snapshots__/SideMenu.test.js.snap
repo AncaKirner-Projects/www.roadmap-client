@@ -19,9 +19,13 @@ exports[`<SideMenu /> renders the component 1`] = `
     </WithStyles(IconButton)>
   </div>
   <WithStyles(Divider) />
-  <h4>
+  <Styled(WithStyles(Typography))
+    component={[Function]}
+    to="/"
+    variant="h6"
+  >
     Categories
-  </h4>
+  </Styled(WithStyles(Typography))>
   <WithStyles(List)>
     <Connect(Categories) />
   </WithStyles(List)>

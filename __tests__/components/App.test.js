@@ -12,7 +12,8 @@ const store = mockStore();
 describe('<App />', () => {
   it('renders the component', () => {
     const wrapper = shallow(<App store={store} />);
-    const component = wrapper.dive().dive();
+    const component = wrapper.dive().dive().dive();
+    console.log('testing');
 
     expect(toJson(component)).toMatchSnapshot();
   });

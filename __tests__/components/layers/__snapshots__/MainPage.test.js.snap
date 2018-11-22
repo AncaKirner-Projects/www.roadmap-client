@@ -7,6 +7,25 @@ exports[`<NavBar /> renders 1 <AppBar/> component 1`] = `
   <div
     className={Object {}}
   />
-  <Connect(CardList) />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+      strict={true}
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/products/:id"
+      strict={true}
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/cart"
+      strict={true}
+    />
+  </Switch>
 </main>
 `;

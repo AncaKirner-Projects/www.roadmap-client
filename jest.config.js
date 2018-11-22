@@ -11,6 +11,7 @@ module.exports = {
   testMatch: ['**/__tests__/**/*.test.js'],
   setupFiles: ['<rootDir>/__tests__/jest-setup.js'],
   transform: {
-    '^.+\\.js$': 'babel-jest'
+    '^.+\\.js$': 'babel-jest',
+    '.+\\.(css|styl|less|sass|scss)$': 'jest-transform-css'
   }
 };

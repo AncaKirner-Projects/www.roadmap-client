@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlertDialog /> renders an element 1`] = `
+<WithStyles(Dialog)
+  aria-describedby="alert-dialog-description"
+  aria-labelledby="alert-dialog-title"
+  open={true}
+>
+  <WithStyles(DialogTitle)
+    id="alert-dialog-title"
+  >
+    Alert
+  </WithStyles(DialogTitle)>
+  <WithStyles(DialogContent)>
+    <WithStyles(DialogContentText)
+      id="alert-dialog-description"
+    >
+      Alert text
+    </WithStyles(DialogContentText)>
+  </WithStyles(DialogContent)>
+  <WithStyles(DialogActions)>
+    <WithStyles(Button)
+      autoFocus={true}
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      OK
+    </WithStyles(Button)>
+  </WithStyles(DialogActions)>
+</WithStyles(Dialog)>
+`;

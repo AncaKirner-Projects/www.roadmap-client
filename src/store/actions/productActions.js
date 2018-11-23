@@ -33,7 +33,6 @@ export const addProduct = product => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log('******', err);
       dispatch(showError(err.statusText ? err.statusText : err, ActionTypes.PRODUCTS_SHOW_ERROR));
     });
 };

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddProduct /> renders an element 1`] = `
+<Fragment>
+  <WithStyles(IconButton)
+    color="inherit"
+    onClick={[Function]}
+  />
+  <WithStyles(Dialog)
+    aria-labelledby="form-dialog-title"
+    onClose={[Function]}
+    open={false}
+  >
+    <ValidatorForm
+      debounceTime={0}
+      onError={[Function]}
+      onSubmit={[Function]}
+    >
+      <WithStyles(DialogTitle)
+        id="form-dialog-title"
+      >
+        Add product
+      </WithStyles(DialogTitle)>
+      <WithStyles(DialogContent)>
+        <SelectValidator
+          SelectProps={
+            Object {
+              "MenuProps": Object {
+                "className": undefined,
+              },
+              "native": true,
+            }
+          }
+          autoFocus={true}
+          errorMessages={
+            Array [
+              "This field is required",
+            ]
+          }
+          fullWidth={true}
+          id="standard-select-currency-native"
+          label="Select category"
+          margin="normal"
+          name="category"
+          onChange={[Function]}
+          select={true}
+          validatorListener={[Function]}
+          validators={
+            Array [
+              "required",
+            ]
+          }
+          value=""
+        >
+          <option
+            key="0"
+            value="Please select"
+          >
+            - Please select -
+          </option>
+          <option
+            key="1"
+            value={1}
+          >
+            Categ1
+          </option>
+          <option
+            key="2"
+            value={2}
+          >
+            Categ2
+          </option>
+        </SelectValidator>
+        <TextValidator
+          errorMessages={
+            Array [
+              "This field is required",
+            ]
+          }
+          fullWidth={true}
+          id="name"
+          label="Product Name"
+          margin="dense"
+          name="name"
+          onChange={[Function]}
+          validatorListener={[Function]}
+          validators={
+            Array [
+              "required",
+            ]
+          }
+          value=""
+        />
+        <TextValidator
+          errorMessages={
+            Array [
+              "This field is required",
+            ]
+          }
+          fullWidth={true}
+          id="standard-textarea"
+          label="Product Description"
+          margin="normal"
+          multiline={true}
+          name="description"
+          onChange={[Function]}
+          validatorListener={[Function]}
+          validators={
+            Array [
+              "required",
+            ]
+          }
+          value=""
+        />
+        <TextValidator
+          errorMessages={
+            Array [
+              "This field is required",
+              "Price is not valid",
+            ]
+          }
+          fullWidth={true}
+          id="name"
+          label="Price"
+          margin="dense"
+          name="price"
+          onChange={[Function]}
+          validatorListener={[Function]}
+          validators={
+            Array [
+              "required",
+              "isNumber",
+            ]
+          }
+          value=""
+        />
+        <TextValidator
+          errorMessages={
+            Array [
+              "This field is required",
+              "Number of products is not valid",
+            ]
+          }
+          fullWidth={true}
+          id="name"
+          label="Number of products"
+          margin="dense"
+          name="totalProducts"
+          onChange={[Function]}
+          validatorListener={[Function]}
+          validators={
+            Array [
+              "required",
+              "isNumber",
+            ]
+          }
+          value=""
+        />
+      </WithStyles(DialogContent)>
+      <WithStyles(DialogActions)>
+        <WithStyles(Button)
+          color="primary"
+          type="submit"
+          variant="contained"
+        >
+          Create
+        </WithStyles(Button)>
+      </WithStyles(DialogActions)>
+    </ValidatorForm>
+  </WithStyles(Dialog)>
+  <AlertDialog
+    handleClose={[Function]}
+    open={false}
+    text="Test message"
+    title="Request Status"
+  />
+</Fragment>
+`;

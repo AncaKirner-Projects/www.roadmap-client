@@ -6,4 +6,10 @@ Enzyme.configure({ adapter: new Adapter() });
 
 // global.window.devToolsExtension = jest.fn();
 global.Response = Response;
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn()
+};
+global.localStorage = localStorageMock;
 // global.fetch = require('jest-fetch-mock');

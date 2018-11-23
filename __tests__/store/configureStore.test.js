@@ -1,14 +1,14 @@
 import '../../src/store/configureStore';
 
 describe('configure redux store', () => {
-  const store2 = {
+  const store = {
     dispatch: [],
-    subscribe: [],
+    subscribe: jest.fn(),
     getState: [],
     replaceReducer: []
   };
   it('should set the root reducer', () => {
-    const createStore = jest.fn().mockReturnValue(store2);
+    const createStore = jest.fn().mockReturnValue(store);
     createStore();
 
     expect(createStore).toHaveBeenCalled();

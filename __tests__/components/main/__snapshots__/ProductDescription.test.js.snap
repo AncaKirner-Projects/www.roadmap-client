@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDescription /> renders an element 1`] = `
+<WithStyles(Paper)
+  className="Connect-ProductDescription--root-1"
+>
+  <WithStyles(Grid)
+    container={true}
+    spacing={16}
+  >
+    <WithStyles(Grid)
+      container={true}
+      item={true}
+      sm={true}
+      xs={12}
+    >
+      <WithStyles(Grid)
+        container={true}
+        direction="column"
+        item={true}
+        spacing={16}
+        xs={true}
+      >
+        <WithStyles(Grid)
+          item={true}
+          xs={true}
+        >
+          <WithStyles(Typography)
+            gutterBottom={true}
+            variant="h5"
+          >
+            Prod1
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            gutterBottom={true}
+            variant="subtitle1"
+          />
+          <WithStyles(Typography)
+            color="textSecondary"
+          >
+            ID:
+            1
+          </WithStyles(Typography)>
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+      <WithStyles(Grid)
+        item={true}
+      >
+        <WithStyles(Typography)
+          align="center"
+          variant="subtitle1"
+        >
+          RON
+        </WithStyles(Typography)>
+        <WithStyles(Button)
+          color="primary"
+          onClick={[Function]}
+          size="small"
+          variant="contained"
+        >
+          Add to cart
+        </WithStyles(Button)>
+        <AlertDialog
+          handleClose={[Function]}
+          open={false}
+          text="Test message"
+          title="Request Status"
+        />
+      </WithStyles(Grid)>
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</WithStyles(Paper)>
+`;

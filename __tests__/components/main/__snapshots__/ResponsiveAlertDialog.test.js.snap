@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResponsiveAlertDialog /> renders an element 1`] = `
+<WithStyles(Dialog)
+  aria-labelledby="responsive-dialog-title"
+  fullScreen={false}
+  onClose={[MockFunction]}
+  open={true}
+>
+  <WithStyles(DialogTitle)
+    id="responsive-dialog-title"
+  >
+    Confirmation
+  </WithStyles(DialogTitle)>
+  <WithStyles(DialogContent)>
+    <WithStyles(DialogContentText)>
+      Are you sure you want to delete the product?
+    </WithStyles(DialogContentText)>
+  </WithStyles(DialogContent)>
+  <WithStyles(DialogActions)>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      No
+    </WithStyles(Button)>
+    <WithStyles(Button)
+      autoFocus={true}
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      Yes
+    </WithStyles(Button)>
+  </WithStyles(DialogActions)>
+</WithStyles(Dialog)>
+`;

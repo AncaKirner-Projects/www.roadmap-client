@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart /> renders an element 1`] = `
+<Fragment>
+  <WithStyles(Typography)
+    component="h3"
+    variant="h5"
+  >
+    My Cart
+  </WithStyles(Typography)>
+  <div>
+    <Connect(CartElement)
+      key="1"
+      product={
+        Object {
+          "id": 1,
+          "prod_name": "Prod1",
+        }
+      }
+    />
+  </div>
+  <Styled(WithStyles(Typography))
+    align="right"
+    variant="h5"
+  >
+    Total:  
+    NaN
+      RON
+  </Styled(WithStyles(Typography))>
+</Fragment>
+`;

@@ -23,10 +23,10 @@ const ResponsiveDialog = (props) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.handleClose} color="primary">
+        <Button onClick={props.onHandleClose} color="primary">
           No
         </Button>
-        <Button onClick={props.handleConfirmClose} color="primary" autoFocus>
+        <Button onClick={props.onHandleConfirmClose} color="primary" autoFocus>
           Yes
         </Button>
       </DialogActions>

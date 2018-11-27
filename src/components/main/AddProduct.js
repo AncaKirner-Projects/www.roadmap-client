@@ -177,7 +177,7 @@ class AddProduct extends Component {
         </Dialog>
         <AlertDialog
           open={this.state.openAlertDialog}
-          handleClose={this.handleAlertDialogClose}
+          onHandleClose={this.handleAlertDialogClose}
           title="Request Status"
           text={addProductStatus && addProductStatus.message}
         />

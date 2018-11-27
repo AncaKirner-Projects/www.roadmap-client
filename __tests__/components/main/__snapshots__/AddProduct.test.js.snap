@@ -169,7 +169,7 @@ exports[`<AddProduct /> renders an element 1`] = `
     </ValidatorForm>
   </WithStyles(Dialog)>
   <AlertDialog
-    handleClose={[Function]}
+    onHandleClose={[Function]}
     open={false}
     text="Test message"
     title="Request Status"

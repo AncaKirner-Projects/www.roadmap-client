@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import thunk from 'redux-thunk';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import Button from '@material-ui/core/Button';
+import AlertDialog from '../../../src/components/main/AlertDialog';
 import CardElement from '../../../src/components/main/CardElement';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
-const middlewares = [thunk];
+const UnwrappedCard = CardElement.WrappedComponent;
 const mockStore = configureMockStore();
 
 describe('<CardElement />', () => {
@@ -28,7 +28,8 @@ describe('<CardElement />', () => {
     price: 23.6
   };
   const props = {
-    addToCart: jest.fn()
+    addToCart: jest.fn(),
+    deleteCartStatusMessage: jest.fn()
   };
 
   it('renders an element card', () => {
@@ -39,22 +40,19 @@ describe('<CardElement />', () => {
   });
 
   it('handleAddToCart', () => {
-    const wrapper = shallow(<CardElement {...props} product={product} store={store} />);
-    const component = wrapper.dive();
-    const button = component.find(Button);
-    // jest.spyOn(wrapper.instance(), 'addToCart');
-    // button.props().onClick('');
-    // expect(props.addToCart.mock.calls.length).toBe(0);
-    console.log(props.addToCart.mock.calls);
-    button.props().onClick();
-    // expect(props.addToCart.mock.calls.length).toBe(1);
-    // simulate('click', { handleAddToCart() { } });
+    const wrapper = shallow(<UnwrappedCard {...props} product={product} />);
+    wrapper.find(Button).simulate('click');
 
     expect(props.addToCart).toHaveBeenCalled();
   });
 
-  // it('handleAlertDialogClose', () => {
-  //   const wrapper = shallow(<CardStyle product={props} store={store} />);
-  //   const component = wrapper.dive();
-  // });
+  it('handleAlertDialogClose', () => {
+    const wrapper = shallow(<UnwrappedCard {...props} product={product} />);
+    const component = wrapper.instance();
+    component.handleAlertDialogClose = jest.fn();
+
+    wrapper.find(AlertDialog).simulate('handleClose');
+
+    expect(props.deleteCartStatusMessage).toHaveBeenCalled();
+  });
 });

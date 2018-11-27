@@ -61,7 +61,7 @@ exports[`<ProductDescription /> renders an element 1`] = `
           Add to cart
         </WithStyles(Button)>
         <AlertDialog
-          handleClose={[Function]}
+          onHandleClose={[Function]}
           open={false}
           text="Test message"
           title="Request Status"

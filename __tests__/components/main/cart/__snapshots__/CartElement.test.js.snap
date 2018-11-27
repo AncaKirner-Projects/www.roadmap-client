@@ -152,8 +152,8 @@ exports[`<CartElement /> renders an element 1`] = `
     </Styled(WithStyles(Grid))>
   </WithStyles(Grid)>
   <ResponsiveDialog
-    handleClose={[Function]}
-    handleConfirmClose={[Function]}
+    onHandleClose={[Function]}
+    onHandleConfirmClose={[Function]}
     open={false}
   />
 </Styled(WithStyles(Paper))>

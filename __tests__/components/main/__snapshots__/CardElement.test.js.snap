@@ -37,7 +37,7 @@ exports[`<CardElement /> renders an element card 1`] = `
       </WithStyles(Button)>
     </Styled(WithStyles(CardActions))>
     <AlertDialog
-      handleClose={[Function]}
+      onHandleClose={[Function]}
       open={false}
       text="Test message"
       title="Request Status"

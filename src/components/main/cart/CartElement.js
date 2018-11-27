@@ -110,8 +110,8 @@ class CartElement extends Component {
         </Grid>
         <ResponsiveAlertDialog
           open={this.state.openAlertDialog}
-          handleClose={this.handleAlertDialogClose}
-          handleConfirmClose={() => this.handleRemoveFromCart(product)}
+          onHandleClose={this.handleAlertDialogClose}
+          onHandleConfirmClose={() => this.handleRemoveFromCart(product)}
         />
       </PaperStyle>
     );

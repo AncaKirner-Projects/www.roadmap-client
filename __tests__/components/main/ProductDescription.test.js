@@ -2,10 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
+import Button from '@material-ui/core/Button';
+import AlertDialog from '../../../src/components/main/AlertDialog';
 import ProductDescription from '../../../src/components/main/ProductDescription';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
 const mockStore = configureMockStore();
+const UnwrappedComponent = ProductDescription.WrappedComponent;
 
 describe('<ProductDescription />', () => {
   const store = mockStore({
@@ -26,6 +29,7 @@ describe('<ProductDescription />', () => {
   });
 
   const props = {
+    openAlertDialog: false,
     match: {
       params: {
         id: 1
@@ -41,4 +45,20 @@ describe('<ProductDescription />', () => {
 
     expect(toJson(component)).toMatchSnapshot();
   });
+
+  // it('handleAlertDialogClose ', () => {
+  //   const wrapper = shallow(<UnwrappedComponent {...props} />);
+  // wrapper.find(AlertDialog).simulate('handleClose');
+
+  // expect(props.deleteCartStatusMessage).toHaveBeenCalled();
+  // });
+
+  // it('handleAddToCart ', () => {
+  //   const wrapper = shallow(<ProductDescription store={store} {...props} />);
+  //   const component = wrapper.dive().dive();
+
+  //   component.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+
+  //   expect(props.addToCart).toHaveBeenCalled();
+  // });
 });

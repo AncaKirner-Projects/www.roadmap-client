@@ -1,15 +1,15 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Categories from '../../../src/components/main/Categories';
 import 'jest-styled-components';
 
-const middlewares = [thunk];
+const UnwrappedComponent = Categories.WrappedComponent;
 const mockStore = configureMockStore();
 const store = mockStore({
-  selectCategory: jest.fn(() => { console.log('here'); }),
+  selectCategory: jest.fn(),
   categories: {
     list: [
       {
@@ -35,12 +35,20 @@ describe('<Categories />', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  // it('handles a category check', () => {
-  //   const wrapper = mount(<Categories store={store} />);
-  //   const onChangeFake = jest.spyOn(wrapper.instance(), 'handleChange');
+  // it('handleChange', () => {
+  //   const props = {
+  //     selectCategory: jest.fn(),
+  //     categories: [
+  //       {
+  //         id: 1,
+  //         name: 'Categ1',
+  //         checked: true
+  //       }
+  //     ]
+  //   };
+  //   const wrapper = shallow(<UnwrappedComponent {...props} />);
+  //   wrapper.find(FormControlLabel).simulate('change', { target: { checked: true } });
 
-  //   wrapper.find('input[type="checkbox"][value="Categ1"]')
-  //     .simulate('change', { target: { value: 'Categ1' } });
-  //   expect(onChangeFake).toHaveBeenCalledTimes(1);
+  //   expect(props.selectCategory).toHaveBeenCalled();
   // });
 });

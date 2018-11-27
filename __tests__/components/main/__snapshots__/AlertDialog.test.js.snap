@@ -22,7 +22,6 @@ exports[`<AlertDialog /> renders an element 1`] = `
     <WithStyles(Button)
       autoFocus={true}
       color="primary"
-      onClick={[MockFunction]}
     >
       OK
     </WithStyles(Button)>

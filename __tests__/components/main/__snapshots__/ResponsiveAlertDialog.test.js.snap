@@ -20,14 +20,12 @@ exports[`<ResponsiveAlertDialog /> renders an element 1`] = `
   <WithStyles(DialogActions)>
     <WithStyles(Button)
       color="primary"
-      onClick={[MockFunction]}
     >
       No
     </WithStyles(Button)>
     <WithStyles(Button)
       autoFocus={true}
       color="primary"
-      onClick={[MockFunction]}
     >
       Yes
     </WithStyles(Button)>

@@ -20,7 +20,7 @@ const AlertDialog = (props) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.handleClose} color="primary" autoFocus>
+        <Button onClick={props.onHandleClose} color="primary" autoFocus>
           OK
         </Button>
       </DialogActions>

@@ -6,8 +6,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-// import MaterialIcon from 'material-icons-react';
 import IconButton from '@material-ui/core/IconButton';
+import { PlaylistAdd } from '@material-ui/icons';
 import { ValidatorForm, TextValidator, SelectValidator } from 'react-material-ui-form-validator';
 import styles from '../layers/styles/addProductStyles';
 import { addProduct, deleteStatusMessage } from '../../store/actions/productActions';
@@ -75,7 +75,7 @@ class AddProduct extends Component {
     return (
       <React.Fragment>
         <IconButton color="inherit" onClick={this.handleClickOpen}>
-          {/* <MaterialIcon icon="playlist_add" color="white" size={35} /> */}
+          <PlaylistAdd />
         </IconButton>
         <Dialog
           open={this.state.open}

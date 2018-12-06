@@ -23,8 +23,9 @@ class ProductDescription extends Component {
   }
 
   handleAddToCart = (product) => {
+    console.log(this.props);
     this.props.addToCart(product);
-    this.setState({ openAlertDialog: true });
+    // this.setState({ openAlertDialog: true });
   }
 
   render() {

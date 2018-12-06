@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import thunk from 'redux-thunk';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import Button from '@material-ui/core/Button';
@@ -7,7 +8,8 @@ import AlertDialog from '../../../src/components/main/AlertDialog';
 import ProductDescription from '../../../src/components/main/ProductDescription';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
-const mockStore = configureMockStore();
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 const UnwrappedComponent = ProductDescription.WrappedComponent;
 
 describe('<ProductDescription />', () => {
@@ -53,12 +55,19 @@ describe('<ProductDescription />', () => {
   // expect(props.deleteCartStatusMessage).toHaveBeenCalled();
   // });
 
-  // it('handleAddToCart ', () => {
-  //   const wrapper = shallow(<ProductDescription store={store} {...props} />);
-  //   const component = wrapper.dive().dive();
+  it('handleAddToCart ', () => {
+    // const wrapper = shallow(<ProductDescription store={store} {...props} />);
+    // const component = wrapper.dive().dive();
 
-  //   component.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+    // component.find(Button).simulate('click', { id: 1, name: 'Prod1' });
 
-  //   expect(props.addToCart).toHaveBeenCalled();
-  // });
+    // expect(props.addToCart).toHaveBeenCalled();
+
+    const spy = jest.spyOn(props, 'addToCart');
+
+    const wrapper = mount(<ProductDescription store={store} {...props} />);
+    wrapper.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+
+    expect(spy).toHaveBeenCalled();
+  });
 });

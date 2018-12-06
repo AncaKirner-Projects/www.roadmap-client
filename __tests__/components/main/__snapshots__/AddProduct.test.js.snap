@@ -5,7 +5,9 @@ exports[`<AddProduct /> renders an element 1`] = `
   <WithStyles(IconButton)
     color="inherit"
     onClick={[Function]}
-  />
+  >
+    <pure(PlaylistAddIcon) />
+  </WithStyles(IconButton)>
   <WithStyles(Dialog)
     aria-labelledby="form-dialog-title"
     onClose={[Function]}

@@ -20,7 +20,9 @@ exports[`<NavBar /> renders 1 <AppBar/> component 1`] = `
         color="inherit"
         component={[Function]}
         to="/cart"
-      />
+      >
+        <pure(ShoppingCartIcon) />
+      </WithStyles(IconButton)>
     </div>
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>

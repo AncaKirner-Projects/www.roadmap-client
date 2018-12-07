@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components';
 import ResponsiveAlertDialog from '../ResponsiveAlertDialog';
-import ActionTypes from '../../../store/actions/actionTypes';
 import { deleteFromCart, changeQuantity } from '../../../store/actions/cartActions';
 
 const PaperStyle = styled(Paper)`
@@ -41,6 +40,7 @@ class CartElement extends Component {
   }
 
   handleQuantityChange = product => (e) => {
+    e.preventDefault();
     this.setState({ quantity: e.target.value });
     this.props.changeQuantity(product, e.target.value);
   }
@@ -99,7 +99,9 @@ class CartElement extends Component {
             </TextField>
           </Grid>
           <PriceStyle item zeroMinWidth>
-            <Typography align="left" variant="subtitle1" noWrap>{product.price * product.quantity}  &nbsp; RON</Typography>
+            <Typography align="left" variant="subtitle1" noWrap>
+              {parseFloat(product.price * product.quantity).toFixed(2)}  &nbsp; RON
+            </Typography>
             <Button
               size="small"
               onClick={this.handleConfirmation}

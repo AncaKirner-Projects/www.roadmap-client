@@ -3,42 +3,44 @@
 exports[`<App /> renders the component 1`] = `
 <BrowserRouter>
   <div
-    className="Connect-MiniDrawer--root-1"
+    className="Connect-MiniDrawer--root-2"
   >
     <WithStyles(CssBaseline) />
     <NavBar
       classes={
         Object {
-          "appBar": "Connect-MiniDrawer--appBar-3",
-          "appBarShift": "Connect-MiniDrawer--appBarShift-4",
-          "content": "Connect-MiniDrawer--content-11",
-          "drawer": "Connect-MiniDrawer--drawer-7",
-          "drawerClose": "Connect-MiniDrawer--drawerClose-9",
-          "drawerOpen": "Connect-MiniDrawer--drawerOpen-8",
-          "grow": "Connect-MiniDrawer--grow-2",
-          "hide": "Connect-MiniDrawer--hide-6",
-          "menuButton": "Connect-MiniDrawer--menuButton-5",
-          "root": "Connect-MiniDrawer--root-1",
-          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-12",
-          "toolbar": "Connect-MiniDrawer--toolbar-10",
+          "appBar": "Connect-MiniDrawer--appBar-4",
+          "appBarShift": "Connect-MiniDrawer--appBarShift-5",
+          "content": "Connect-MiniDrawer--content-12",
+          "drawer": "Connect-MiniDrawer--drawer-8",
+          "drawerClose": "Connect-MiniDrawer--drawerClose-10",
+          "drawerOpen": "Connect-MiniDrawer--drawerOpen-9",
+          "grow": "Connect-MiniDrawer--grow-3",
+          "hide": "Connect-MiniDrawer--hide-7",
+          "menuButton": "Connect-MiniDrawer--menuButton-6",
+          "root": "Connect-MiniDrawer--root-2",
+          "rootPaper": "Connect-MiniDrawer--rootPaper-1",
+          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-13",
+          "toolbar": "Connect-MiniDrawer--toolbar-11",
         }
       }
     />
     <Connect(SideMenu)
       classes={
         Object {
-          "appBar": "Connect-MiniDrawer--appBar-3",
-          "appBarShift": "Connect-MiniDrawer--appBarShift-4",
-          "content": "Connect-MiniDrawer--content-11",
-          "drawer": "Connect-MiniDrawer--drawer-7",
-          "drawerClose": "Connect-MiniDrawer--drawerClose-9",
-          "drawerOpen": "Connect-MiniDrawer--drawerOpen-8",
-          "grow": "Connect-MiniDrawer--grow-2",
-          "hide": "Connect-MiniDrawer--hide-6",
-          "menuButton": "Connect-MiniDrawer--menuButton-5",
-          "root": "Connect-MiniDrawer--root-1",
-          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-12",
-          "toolbar": "Connect-MiniDrawer--toolbar-10",
+          "appBar": "Connect-MiniDrawer--appBar-4",
+          "appBarShift": "Connect-MiniDrawer--appBarShift-5",
+          "content": "Connect-MiniDrawer--content-12",
+          "drawer": "Connect-MiniDrawer--drawer-8",
+          "drawerClose": "Connect-MiniDrawer--drawerClose-10",
+          "drawerOpen": "Connect-MiniDrawer--drawerOpen-9",
+          "grow": "Connect-MiniDrawer--grow-3",
+          "hide": "Connect-MiniDrawer--hide-7",
+          "menuButton": "Connect-MiniDrawer--menuButton-6",
+          "root": "Connect-MiniDrawer--root-2",
+          "rootPaper": "Connect-MiniDrawer--rootPaper-1",
+          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-13",
+          "toolbar": "Connect-MiniDrawer--toolbar-11",
         }
       }
       theme={
@@ -407,18 +409,19 @@ exports[`<App /> renders the component 1`] = `
     <MainPage
       classes={
         Object {
-          "appBar": "Connect-MiniDrawer--appBar-3",
-          "appBarShift": "Connect-MiniDrawer--appBarShift-4",
-          "content": "Connect-MiniDrawer--content-11",
-          "drawer": "Connect-MiniDrawer--drawer-7",
-          "drawerClose": "Connect-MiniDrawer--drawerClose-9",
-          "drawerOpen": "Connect-MiniDrawer--drawerOpen-8",
-          "grow": "Connect-MiniDrawer--grow-2",
-          "hide": "Connect-MiniDrawer--hide-6",
-          "menuButton": "Connect-MiniDrawer--menuButton-5",
-          "root": "Connect-MiniDrawer--root-1",
-          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-12",
-          "toolbar": "Connect-MiniDrawer--toolbar-10",
+          "appBar": "Connect-MiniDrawer--appBar-4",
+          "appBarShift": "Connect-MiniDrawer--appBarShift-5",
+          "content": "Connect-MiniDrawer--content-12",
+          "drawer": "Connect-MiniDrawer--drawer-8",
+          "drawerClose": "Connect-MiniDrawer--drawerClose-10",
+          "drawerOpen": "Connect-MiniDrawer--drawerOpen-9",
+          "grow": "Connect-MiniDrawer--grow-3",
+          "hide": "Connect-MiniDrawer--hide-7",
+          "menuButton": "Connect-MiniDrawer--menuButton-6",
+          "root": "Connect-MiniDrawer--root-2",
+          "rootPaper": "Connect-MiniDrawer--rootPaper-1",
+          "sectionDesktop": "Connect-MiniDrawer--sectionDesktop-13",
+          "toolbar": "Connect-MiniDrawer--toolbar-11",
         }
       }
     />

@@ -1,6 +1,12 @@
 const drawerWidth = 240;
 
 const styles = theme => ({
+  rootPaper: {
+    flexGrow: 1,
+    maxWidth: 800,
+    minHeight: 200,
+    padding: theme.spacing.unit * 2
+  },
   root: {
     display: 'flex'
   },

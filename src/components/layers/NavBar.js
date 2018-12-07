@@ -48,4 +48,4 @@ NavBar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default (NavBar);
+export default NavBar;

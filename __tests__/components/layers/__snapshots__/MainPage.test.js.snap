@@ -15,9 +15,9 @@ exports[`<NavBar /> renders 1 <AppBar/> component 1`] = `
       strict={true}
     />
     <Route
-      component={[Function]}
       exact={true}
       path="/products/:id"
+      render={[Function]}
       strict={true}
     />
     <Route

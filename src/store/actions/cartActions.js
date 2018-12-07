@@ -1,7 +1,6 @@
 import ActionTypes from './actionTypes';
 
 export const addToCart = product => (dispatch) => {
-  console.log('HERE');
   dispatch({
     type: ActionTypes.ADD_TO_CART,
     payload: product,

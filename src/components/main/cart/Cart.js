@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import CartElement from './CartElement';
 
-const totalPrice = (products) => {
+const totalPrice = (products = []) => {
   let total = 0;
   products.forEach(product => { total += product.price * product.quantity; });
-  return total;
+
+  return parseFloat(total).toFixed(2);
 };
 
 const TotalStyle = styled(Typography)`

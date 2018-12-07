@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import thunk from 'redux-thunk';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import Button from '@material-ui/core/Button';
@@ -8,13 +7,11 @@ import AlertDialog from '../../../src/components/main/AlertDialog';
 import ProductDescription from '../../../src/components/main/ProductDescription';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-const UnwrappedComponent = ProductDescription.WrappedComponent;
+const mockStore = configureMockStore();
+const UnwrappedComponent2 = ProductDescription.WrappedComponent;
 
 describe('<ProductDescription />', () => {
   const store = mockStore({
-    classes: {},
     products: {
       all: [
         { id: 1, prod_name: 'Prod1' }
@@ -31,6 +28,9 @@ describe('<ProductDescription />', () => {
   });
 
   const props = {
+    classes: {
+      rootPaper: ''
+    },
     openAlertDialog: false,
     match: {
       params: {
@@ -43,31 +43,38 @@ describe('<ProductDescription />', () => {
 
   it('renders an element', () => {
     const wrapper = shallow(<ProductDescription store={store} {...props} />);
-    const component = wrapper.dive().dive();
+    const component = wrapper.dive();
 
     expect(toJson(component)).toMatchSnapshot();
   });
 
   // it('handleAlertDialogClose ', () => {
   //   const wrapper = shallow(<UnwrappedComponent {...props} />);
-  // wrapper.find(AlertDialog).simulate('handleClose');
+  //   console.log(toJson(wrapper));
+  //   wrapper.find(AlertDialog).simulate('handleClose');
 
-  // expect(props.deleteCartStatusMessage).toHaveBeenCalled();
+  //   expect(props.deleteCartStatusMessage).toHaveBeenCalled();
   // });
 
-  it('handleAddToCart ', () => {
-    // const wrapper = shallow(<ProductDescription store={store} {...props} />);
-    // const component = wrapper.dive().dive();
+  // it('handleAddToCart ', () => {
+  //   const wrapper = shallow(<UnwrappedComponent2 {...props} />);
+  // wrapper.find(Button).simulate('click', { id: 1, name: 'Prod1' });
 
-    // component.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+  // expect(props.addToCart).toHaveBeenCalled();
 
-    // expect(props.addToCart).toHaveBeenCalled();
+  // const wrapper = shallow(<ProductDescription store={store} {...props} />);
+  // const component = wrapper.dive();
+  // console.log(toJson(wrapper));
 
-    const spy = jest.spyOn(props, 'addToCart');
+  // component.find(Button).simulate('click', { id: 1, name: 'Prod1' });
 
-    const wrapper = mount(<ProductDescription store={store} {...props} />);
-    wrapper.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+  // expect(props.addToCart).toHaveBeenCalled();
 
-    expect(spy).toHaveBeenCalled();
-  });
+  // const spy = jest.spyOn(props, 'addToCart');
+
+  // const wrapper = mount(<ProductDescription store={store} {...props} />);
+  // wrapper.find(Button).simulate('click', { id: 1, name: 'Prod1' });
+
+  // expect(spy).toHaveBeenCalled();
+  // });
 });

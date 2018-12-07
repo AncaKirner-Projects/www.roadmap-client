@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
-import { compose } from 'recompose';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import styles from '../layers/styles/productDescriptionStyles';
 import AlertDialog from './AlertDialog';
 import ActionTypes from '../../store/actions/actionTypes';
 import { addToCart, deleteCartStatusMessage } from '../../store/actions/cartActions';
@@ -37,7 +34,7 @@ class ProductDescription extends Component {
     if (!product) return null;
 
     return (
-      <Paper className={classes.root}>
+      <Paper className={classes.rootPaper}>
         <Grid container spacing={16}>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={16}>
@@ -90,7 +87,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 });
 
-export default compose(
-  withStyles(styles),
-  connect(mapStateToProps, mapDispatchToProps)
-)(ProductDescription);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDescription);

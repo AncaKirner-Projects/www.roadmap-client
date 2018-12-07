@@ -2,7 +2,7 @@
 
 exports[`<ProductDescription /> renders an element 1`] = `
 <WithStyles(Paper)
-  className="Connect-ProductDescription--root-1"
+  className=""
 >
   <WithStyles(Grid)
     container={true}

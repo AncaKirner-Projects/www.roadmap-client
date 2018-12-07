@@ -10,7 +10,11 @@ const MainPage = props => (
     <div className={props.classes.toolbar} />
     <Switch>
       <Route exact strict path="/" component={CardList} />
-      <Route exact strict path="/products/:id" component={ProductDescription} />
+      <Route
+        exact
+        path="/products/:id"
+        render={prop => <ProductDescription classes={props.classes} {...prop} />}
+      />
       <Route exact strict path="/cart" component={Cart} />
     </Switch>
   </main>

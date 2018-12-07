@@ -18,6 +18,10 @@ CardList.propTypes = {
   products: PropTypes.array
 };
 
+CardList.defaultProps = {
+  products: []
+};
+
 const mapStateToProps = (state) => {
   const products = (state.categories && state.categories.selectedProducts)
     ? state.categories.selectedProducts

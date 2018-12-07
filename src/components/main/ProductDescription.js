@@ -20,9 +20,8 @@ class ProductDescription extends Component {
   }
 
   handleAddToCart = (product) => {
-    console.log(this.props);
     this.props.addToCart(product);
-    // this.setState({ openAlertDialog: true });
+    this.setState({ openAlertDialog: true });
   }
 
   render() {
@@ -54,7 +53,8 @@ class ProductDescription extends Component {
                 {product.price}
                 RON
               </Typography>
-              <Button variant="contained"
+              <Button
+                variant="contained"
                 size="small"
                 color="primary"
                 onClick={() => this.handleAddToCart(product)}

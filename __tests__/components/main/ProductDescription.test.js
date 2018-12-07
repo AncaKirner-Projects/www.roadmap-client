@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
-import Button from '@material-ui/core/Button';
-import AlertDialog from '../../../src/components/main/AlertDialog';
+// import Button from '@material-ui/core/Button';
+// import AlertDialog from '../../../src/components/main/AlertDialog';
 import ProductDescription from '../../../src/components/main/ProductDescription';
 import ActionTypes from '../../../src/store/actions/actionTypes';
 
 const mockStore = configureMockStore();
-const UnwrappedComponent2 = ProductDescription.WrappedComponent;
+// const UnwrappedComponent2 = ProductDescription.WrappedComponent;
 
 describe('<ProductDescription />', () => {
   const store = mockStore({

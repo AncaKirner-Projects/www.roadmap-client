@@ -49,8 +49,8 @@ class CartElement extends Component {
     const { product } = this.props;
 
     const quantities = () => {
-      let res = [];
-      for (let i = 1; i <= product.prod_number; i++) {
+      const res = [];
+      for (let i = 1; i <= product.prod_number; i += 1) {
         res.push({ value: i });
       }
 
@@ -100,7 +100,8 @@ class CartElement extends Component {
           </Grid>
           <PriceStyle item zeroMinWidth>
             <Typography align="left" variant="subtitle1" noWrap>
-              {parseFloat(product.price * product.quantity).toFixed(2)}  &nbsp; RON
+              {parseFloat(product.price * product.quantity).toFixed(2)}
+              &nbsp;RON
             </Typography>
             <Button
               size="small"

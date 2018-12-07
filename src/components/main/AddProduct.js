@@ -28,7 +28,7 @@ class AddProduct extends Component {
   };
 
   componentDidMount() {
-    ValidatorForm.addValidationRule('isNumber', value => !isNaN(parseInt(value, 0)));
+    ValidatorForm.addValidationRule('isNumber', value => !Number.isNaN(parseInt(value, 0)));
   }
 
   handleClickOpen = () => {

@@ -6,7 +6,7 @@ import CartElement from './CartElement';
 
 const totalPrice = (products = []) => {
   let total = 0;
-  products.forEach(product => { total += product.price * product.quantity; });
+  products.forEach((product) => { total += product.price * product.quantity; });
 
   return parseFloat(total).toFixed(2);
 };

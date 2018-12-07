@@ -1,15 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import thunk from 'redux-thunk';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import CartElement from '../../../../src/components/main/cart/CartElement';
 import ResponsiveAlertDialog from '../../../../src/components/main/ResponsiveAlertDialog';
-// import ActionTypes from '../../../src/store/actions/actionTypes';
 
-const middlewares = [thunk];
 const mockStore = configureMockStore();
 const UnwrappedComponent = CartElement.WrappedComponent;
 

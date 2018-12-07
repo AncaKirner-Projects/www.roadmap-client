@@ -12,7 +12,7 @@ const cartReducer = createReducer(
         const index = state.products.findIndex(elem => action.payload.id === elem.id);
         if (index > -1) {
           productList = [...state.products];
-          productList[index].quantity++;
+          productList[index].quantity = +1;
         } else {
           foundProduct = { ...action.payload, quantity: 1 };
           productList = [...state.products, foundProduct];

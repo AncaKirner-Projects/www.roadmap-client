@@ -21,20 +21,20 @@ class Categories extends Component {
     const { categories } = this.props;
     return (
       <FormGroupStyle>
-        {categories && categories.map((category) => {
-          return (
-            <FormControlLabel
-              key={category.id}
-              control={
-                <Checkbox
-                  color="primary"
-                  checked={category.checked}
-                  onChange={this.handleChange(category)}
-                  value={category.name}
-                />}
-              label={category.name}
-            />);
-        })}
+        {categories && categories.map(category => (
+          <FormControlLabel
+            key={category.id}
+            control={(
+              <Checkbox
+                color="primary"
+                checked={category.checked}
+                onChange={this.handleChange(category)}
+                value={category.name}
+              />
+            )}
+            label={category.name}
+          />))
+        }
       </FormGroupStyle>
     );
   }
@@ -46,6 +46,10 @@ Categories.propTypes = {
     selected: PropTypes.arrayOf(PropTypes.number.isRequired)
   })),
   selectCategory: PropTypes.func.isRequired
+};
+
+Categories.defaultProps = {
+  categories: []
 };
 
 const mapStateToProps = state => ({

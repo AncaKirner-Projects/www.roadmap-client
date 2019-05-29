@@ -1,7 +1,7 @@
 import ActionTypes, { showError } from './actionTypes';
 
 const getAllProducts = () => (dispatch) => {
-  fetch('http://localhost:8000/products')
+  fetch('http://localhost:8000/products/categories')
     .then(res => res.json())
     .then((data) => {
       dispatch({
